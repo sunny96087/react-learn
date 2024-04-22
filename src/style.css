@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "sans-serif", Geneva, Verdana;
+}
+
+a {
+  text-decoration: none;
+  color: #4e3baa;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.navStyle {
+  padding: 16px 24px;
+  background-color: #bdb1f379;
+}
+
+.navStyle ul li a:hover {
+  color: #25166e;
+}
+
+.navStyle ul {
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+}
+
+.custom-btn{
+    background-color: #efd6f6;
+    border-radius: 8px;
+    border: #4e3baa 1px solid;
+    color: #4e3baa;
+    padding: 8px 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.custom-btn:hover{
+    background-color: #e5baf0;
+}
+
+.icons{
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+  align-items: center;
+}
+
+.custom-img-icon{
+  width: 28px;
+}
+
+.custom-img{
+  width: 100%;
+  border-radius: 8px;
+}
+
+.fruit-card{
+  padding: 12px;
+  border: 1px solid #c3c3c3;
+  box-shadow: 2px 1px 1px 1px #f1f1f1;
+  width: 50%;
+  border-radius: 8px;
+}
