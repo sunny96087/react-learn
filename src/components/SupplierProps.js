@@ -1,24 +1,17 @@
 import React from "react";
-import "../style.css";
 
-export default function SupplierProps({id, name, address, tel}){
-    const mystyle = {
-        fontSize:"12px",
-        color:"#888",
-        display:"flex",
-        flexWrap:"wrap",
-        gap:"6px"
+export default function SupplierProps({id,name,address,tel}){
+    const mystyle={
+        fontSize:'0.8em',
+        color:'gray'
     }
 
     return(
         <div style={mystyle}>
-            <span>{id}</span>
-            <span>|</span>
-            <span>{name}</span>
-            <span>|</span>
-            <span>{address}</span>
-            <span>|</span>
-            <span>{tel}</span>
+            <span>{id} | </span>
+            <span style={{color:'red'}}>{name} | </span>
+            <span>{address} | </span>
+            <span>{tel} | </span>
         </div>
     )
 }

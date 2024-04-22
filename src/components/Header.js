@@ -1,18 +1,17 @@
 import React from "react";
 import { Component } from "react";
 
-class Header extends Component {
-  render() {
-    const mystyle = {
-      padding: "24px 12px",
-      backgroundColor: "#bac",
-    };
-    return (
-      <header style={mystyle}>
-        <h1>Wlcome to React App</h1>
-      </header>
-    );
-  }
+class Header extends Component{ //繼承Component
+    render() {
+        const mystyle={paddingLeft:'3vw'}
+        return(
+            <header style={mystyle}>
+                <h1>Wlcome to Taiwan Fruit Stand</h1>
+            </header>
+        )
+        
+    }
+
 }
 
 export default Header;

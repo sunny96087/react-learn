@@ -1,63 +1,57 @@
 import React from "react";
-import MyState from "./MyState";
+import MyState from "./MyState"; 
 import MyProps from "./MyProps";
 import FruitProps from "./FruitProps";
 import MyInput from "./MyInput";
 
-export default function Main() {
-  const mystyle = {
-    padding: "24px 12px",
-    // color: "gray",
-  };
+export default function Main(){
+    const mystyle={
+        paddingLeft:'3vw',
+        color:'gray'
+    }
 
-  const currentFruit = ["mango", "apple", "banana", "pineapple", "papaya"];
-  const date = new Date();
+    const currentFruit=['Mango','Watermelon','Banana','龍眼','芭樂'];
+    const d=new Date();
+    const myMonth=d.getMonth() +1; // 1 月傳回 0
 
-  const currentMonth = date.getMonth() + 1;
+    return(
+        <main style={mystyle}>
+        <p style={{color:'tomato'}}>Let's go, take a fruit journey</p>
 
-  return (
-    <main style={mystyle}>
-      <p>Lorem ipsum dolor sit amet.</p>
-      <p>
-        {currentMonth} 月 | 當季賀甲水果{" "}
-        {currentFruit.map((e) => (
-          <li>{e}</li>
-        ))}
-      </p>
-      <p style={{ color: "#faa" }}>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, eaque
-        dolorem. Necessitatibus culpa accusamus voluptates!
-      </p>
-      <MyState />
-      <MyProps e="Main 傳遞來的參數" f="Main 傳遞來的第二個參數" />
+        <p>現在是 {myMonth} 月 | 當季賀呷水果：{currentFruit.map((e)=>(<li>{e}</li>))}</p>
 
-      {/* 水果卡片 */}
-      <div style={{ display: "flex",gap: "16px" }}>
-        <FruitProps
-          fruit={require("../images/fruit/03.jpg")}
-          heart={5.0}
-          word="店長強力推薦"
-          price={300}
-          desc="這個真的很讚"
-        />
-        <FruitProps
-          fruit={require("../images/fruit/04.jpg")}
-          heart={5.0}
-          word="超級無敵酸"
-          price={555}
-          desc="酸到懷疑人生"
-        />
-        <FruitProps
-          fruit={require("../images/fruit/05.jpg")}
-          heart={5.0}
-          word="西不西瓜"
-          price={688}
-          desc="瓜瓜瓜"
-        />
-      </div>
+        <p>Visitors can taste the fresh fruits of the season in Taiwan and experience the fun of fruit picking. Let us visit the gardens all over Taiwan.</p>
 
-      {/* 計算總額 MyInput */}
-      <MyInput />
-    </main>
-  );
+        <div>
+            <MyState />
+            <MyProps subject="Taiwan Fruit Stand"/>
+        </div>
+
+        <div style={{display:'inline-flex'}}>
+            <FruitProps  
+                fruit={require('../images/fruits/1.jpg')}
+                heart={5.0}
+                word='店長強力推薦'
+                price='顆 NT$30 元' 
+                desc='蘋果 | 含有大量的膳食纖維及維他命C'/>
+
+            <FruitProps  
+                fruit={require('../images/fruits/2.jpg')}
+                heart={4.5}
+                word='店長強力推薦'
+                price='串 NT$69 元' 
+                desc='香蕉 | 富含膳食纖維中的果膠，可促進腸蠕動'/>
+
+            <FruitProps  
+                fruit={require('../images/fruits/3.jpg')}
+                heart={4.2}
+                word='巨蜂葡萄'
+                price='顆 NT$200 元' 
+                desc='葡萄 | 營養豐富，含有多種礦物質'/>
+        </div>
+        <hr />
+        <MyInput />
+
+        </main>
+    )
 }

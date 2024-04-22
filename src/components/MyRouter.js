@@ -1,34 +1,37 @@
-// import React from 'react';
-// import {BrowserRouter, Routes, Route, Link} from "react-router-dom";
-// import Home from './Page/Home';
-// import About from './Page/About';
-// import News from './Page/News';
-// import Product from './Page/Product';
+import React from "react";
+import { BrowserRouter,Routes,Route, Link } from "react-router-dom";
+import Home from './Home';
+import About from './About';
+import News from './News';
+import Product from './Product';
+import Header from "./Header";
 
 
-// const MyRouter=()=>{
-//     return(
-//         <BrowserRouter>
-//         <nav>
-//             <div>
-//                 {/* to="" 要與下面路由設定的名稱相同 */}
-//                 <Link to="/">Home</Link> 
-//                 <Link to="/about">About</Link>
-//                 <Link to="/news">News</Link>
-//                 <Link to="/product">Product</Link>
-//             </div>
-//         </nav>
-//         {/* 下方是設定路由，上方是顯示 */}
-//             <Routes>
-//                 <Route path="/" element={<Home />}/>
-//                 <Route path="/about" element={<About />}/>
-//                 <Route path="/news" element={<News />}/>
-//                 <Route path="/product" element={<Product />}/>
-//             </Routes>
-//         </BrowserRouter>
-//     );
-// }
 
-// export default MyRouter;
 
-// test
+const  MyRouter=(props)=>{
+    return(
+       <BrowserRouter>
+        <nav>
+            <div className="link-div">
+                <Link to="/" className="link-to">Home</Link>
+                <Link to="/About" className="link-to">About</Link>
+                <Link to="/News" className="link-to">News</Link>
+                <Link to={`/Product/${props.fruit}`} className="link-to">Product</Link>
+            </div>
+        </nav>
+
+        <Header />
+  
+
+        <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/About" element={<About />} />
+            <Route path="/News" element={<News />} />
+            <Route path="/Product/:fruitName" element={<Product />} />
+        </Routes>       
+       </BrowserRouter>
+    );
+}
+
+export default MyRouter;
