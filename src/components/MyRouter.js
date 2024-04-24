@@ -7,8 +7,9 @@ import Product from "./Product";
 import Header from "./Header";
 import Service from "./Service";
 import Error from "./Error";
-import MyUseEffect from "./MyUseEffect";
+import OtherHooks from "./OtherHooks";
 
+// OtherHooks
 const MyRouter = (props) => {
   let mystyle = {
     color: "blue",
@@ -55,11 +56,11 @@ const MyRouter = (props) => {
             style={({ isActive }) => (isActive ? mystyle : undefined)}
           >Service</NavLink>
 
-          {/* <NavLink
-            to="/MyUseEffect"
+          <NavLink
+            to="/OtherHooks"
             className="link-to"
             style={({ isActive }) => (isActive ? mystyle : undefined)}
-          >MyUseEffect</NavLink> */}
+          >OtherHooks</NavLink>
         </div>
       </nav>
 
@@ -71,7 +72,7 @@ const MyRouter = (props) => {
         <Route path="/News" element={<News />} />
         <Route path="/Product/:fruitName" element={<Product />} />
         <Route path="/Service" element={<Service />} />
-        {/* <Route path="/MyUseEffect" element={<MyUseEffect />} /> */}
+        <Route path="/OtherHooks" element={<OtherHooks />} />
         <Route path="*" element={<Error />} />
       </Routes>
     </BrowserRouter>
